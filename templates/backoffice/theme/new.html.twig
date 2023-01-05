@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau thème{% endblock %}
+
+{% block body %}
+    <h1>Créer un thème</h1>
+
+    {{ include('backoffice/theme/_form.html.twig') }}
+
+    <a href="{{ path('app_backoffice_theme_index') }}" style="color: #058240">Retour à la liste des thèmes</a>
+{% endblock %}

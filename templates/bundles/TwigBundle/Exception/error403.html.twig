@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Accès interdit</h1>
+
+    <p>
+        Vous n'avez pas les droits requis pour accéder à cette page. <a href="{{ path('app_backoffice_main') }}">retour à l'accueil</a>.
+    </p>
+{% endblock %}

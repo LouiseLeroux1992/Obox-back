@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle étiquette{% endblock %}
+
+{% block body %}
+    <h1>Créer une nouvelle étiquette</h1>
+
+    {{ include('backoffice/tag/_form.html.twig') }}
+
+    <a href="{{ path('app_backoffice_tag_index') }}" style="color: #058240">Retour à la liste des étiquettes</a>
+{% endblock %}

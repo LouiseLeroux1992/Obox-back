@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les  thèmes{% endblock %}
+
+{% block body %}
+    <h1>Les thèmes</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Identifiant</th>
+                <th>Nom</th>
+                <th>Image</th>
+                <th>Description</th>
+                <th>Description de l'image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for theme in themes %}
+            <tr>
+                <td>{{ theme.id }}</td>
+                <td>{{ theme.name }}</td>
+                <td>{{ theme.image }}</td>
+                <td>{{ theme.description }}</td>
+                <td>{{ theme.imageDescription }}</td>
+                <td>
+                    <a href="{{ path('app_backoffice_theme_show', {'id': theme.id}) }}">Ouvrir</a>
+                    <a href="{{ path('app_backoffice_theme_edit', {'id': theme.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

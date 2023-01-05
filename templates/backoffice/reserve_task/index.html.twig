@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les tâches{% endblock %}
+
+{% block body %}
+    <h1>Les tâches en réserve</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Identifiant</th>
+                <th>Nom</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reserve_task in reserve_tasks %}
+            <tr>
+                <td>{{ reserve_task.id }}</td>
+                <td>{{ reserve_task.name }}</td>
+                <td>
+                    <a href="{{ path('app_backoffice_reserve_task_show', {'id': reserve_task.id}) }}">Ouvrir</a>
+                    <a href="{{ path('app_backoffice_reserve_task_edit', {'id': reserve_task.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

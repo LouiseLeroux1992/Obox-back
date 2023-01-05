@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle tâche{% endblock %}
+
+{% block body %}
+    <h1>Créer une nouvelle tâche en réserve</h1>
+
+    {{ include('backoffice/reserve_task/_form.html.twig') }}
+
+    <a href="{{ path('app_backoffice_reserve_task_index') }}"  style="color: #058240">retour à la liste des tâches</a>
+{% endblock %}

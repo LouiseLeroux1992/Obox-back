@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier une tâche{% endblock %}
+
+{% block body %}
+    <h1>Modifier une tâche de la réserve</h1>
+
+    {{ include('backoffice/reserve_task/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+    <a href="{{ path('app_backoffice_reserve_task_index') }}">retour à la liste des tâches</a>
+
+    {{ include('backoffice/reserve_task/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les articles{% endblock %}
+
+{% block body %}
+    <h1>Les articles</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Identifiant</th>
+                <th>Titre</th>
+                <th>Résumé</th>
+                <th>Image</th>
+                <th>Description de l'image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.id }}</td>
+                <td>{{ article.title }}</td>
+                <td>{{ article.summary }}</td>
+                <td>{{ article.image }}</td>
+                <td>{{ article.imageDescription }}</td>
+                <td>
+                    <a href="{{ path('app_backoffice_article_show', {'id': article.id}) }}">Ouvrir</a>
+                    <a href="{{ path('app_backoffice_article_edit', {'id': article.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

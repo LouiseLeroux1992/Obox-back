@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Thème{% endblock %}
+
+{% block body %}
+    <h1>Thème</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Identifiant</th>
+                <td>{{ theme.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ theme.name }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ theme.image }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ theme.description }}</td>
+            </tr>
+            <tr>
+                <th>Description de l'image</th>
+                <td>{{ theme.imageDescription }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_backoffice_theme_index') }}">Retour à la liste des thèmes</a>
+
+    <a href="{{ path('app_backoffice_theme_edit', {'id': theme.id}) }}">Modifier</a>
+
+    {{ include('backoffice/theme/_delete_form.html.twig') }}
+{% endblock %}

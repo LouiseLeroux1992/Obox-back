@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier un article{% endblock %}
+
+{% block body %}
+    <h1>Modifier l'article</h1>
+
+    {{ include('backoffice/article/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+    <a href="{{ path('app_backoffice_article_index') }}" style="color: #058240">retour à la liste des articles</a>
+
+    {{ include('backoffice/article/_delete_form.html.twig') }}
+{% endblock %}

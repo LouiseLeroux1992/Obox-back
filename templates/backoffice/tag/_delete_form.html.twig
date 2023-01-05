@@ -1,0 +1,4 @@
+<form method="post" action="{{ path('app_backoffice_tag_delete', {'id': tag.id}) }}" onsubmit="return confirm('êtes-vous sûr de vouloir supprimer cette étiquette ?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ tag.id) }}">
+    <button class="btn" style="background-color: #058240; color: #fee3a2">Supprimer</button>
+</form>

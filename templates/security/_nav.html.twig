@@ -1,0 +1,29 @@
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+            
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown">
+                        <span>{{ app.user.username }}</span>
+                    <i class="bi bi-person-square"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>Rôles</li>
+                    {% for role in app.user.roles %}
+                        <li class="dropdown-item" style="color: #87C159">{{ role }}</li>
+                    {% endfor %}
+                </ul>
+            
+            
+        </li>
+    </ul>
+    <a href="{{path('app_logout')}}" type="button" class="btn me-2" style="background-color: #058240; color: #fee3a2">Deconnexion</a>
+{% else %}
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li>
+            <span style="color: #058240">Visiteur </span>
+            <i class="bi bi-person-square"></i>
+            <a href="{{path('app_login')}}" type="button" class="btn me-2" style="background-color: #87C159">Connexion</a>
+        </li>
+    </ul>
+{% endif %}
